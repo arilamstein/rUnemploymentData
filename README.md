@@ -5,6 +5,10 @@ This R Package contains data and visualization functions for USA unemployment da
 US Bureau of Labor Statistics (BLS) in January 2015. The functions which scraped the data are also in this package, 
 which allows you to reproduce and verify the dataset yourself.
 
+## Development
+
+I blog about this package's development [here](http://www.arilamstein.com/blog).
+
 # Installation
 
 To install the package from CRAN type:
