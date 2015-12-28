@@ -22,7 +22,7 @@ To install the package from github type:
 ```
 # install.packages("devtools")
 library(devtools)
-install_github("trulia/rUnemploymentData")
+install_github("arilamstein/rUnemploymentData")
 library(rUnemploymentData)
 ```
 
