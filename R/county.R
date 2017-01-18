@@ -8,6 +8,7 @@ if (base::getRversion() >= "2.15.1") {
 #' This function is included to allow you to verify the integrity of ?df_county_unemployment.
 #' @param year The year of the data you want. Must bet between 1990 and 2013
 #' @importFrom stringr str_trim
+#' @importFrom utils data read.fwf
 #' @export
 get_county_unemployment_df = function(year)
 {
@@ -52,6 +53,7 @@ get_county_unemployment_df = function(year)
 #' This function is included to allow you to verify the integrity of ?df_county_unemployment.
 #' This will scrape the Bureau of Labor Statistics Website to get the data.
 #' @export
+#' @importFrom utils data
 build_county_df = function()
 {
   data(county.regions, package="choroplethrMaps", envir=environment())
@@ -78,15 +80,16 @@ build_county_df = function()
 #' Data comes from ?df_county_unemployment. The choropleth is rendered with the function
 #' ?county_choropleth in the choroplethr package. 
 #' 
-#'  @param year The year of data to use. Must be between 1990 and 2013.
-#'  @param buckets The number of equally sized buckets to places the values in. 
-#'  A value of 1 will use a continuous scale, and a value in [2, 9] will use that many buckets.
-#'  @param zoom An optional vector of states to zoom in on. Elements of this vector 
-#'  must exactly match the names of states as they appear in the "region" column of 
-#'  ?state.regions in the choroplethrMaps package.
+#' @param year The year of data to use. Must be between 1990 and 2013.
+#' @param num_colors The number of colors on the map. A value of 1 will use a continuous scale. 
+#' A value in [2, 9] will use that many colors.
+#' @param zoom An optional vector of states to zoom in on. Elements of this vector 
+#' must exactly match the names of states as they appear in the "region" column of 
+#' ?state.regions in the choroplethrMaps package.
 #' @importFrom choroplethr county_choropleth
+#' @importFrom utils data
 #' @export
-county_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
+county_unemployment_choropleth = function(year = 2013, num_colors = 7, zoom = NULL)
 {
   # validate input
   stopifnot(is.numeric(year))
@@ -98,9 +101,9 @@ county_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
   colnames(df) = c("region", "value")  
   
   # sensible defaults
-  title  = paste0("State Unemployment Rates: Year ", year)
+  title  = paste0("County Unemployment Rates: Year ", year)
   legend = "Unemployment Rate"
-  county_choropleth(df, title, legend, buckets, zoom)
+  county_choropleth(df, title, legend, num_colors, zoom)
 }
 
 #' Create an animated choropleth of US County Unemployment Data
@@ -110,6 +113,7 @@ county_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
 #' your local file system - see ?choroplethr_animate in the choroplethr package for details.
 #' @export
 #' @importFrom choroplethr county_choropleth choroplethr_animate
+#' @importFrom utils data
 animated_county_unemployment_choropleth = function()
 {
   data(df_county_unemployment, package="rUnemploymentData", envir=environment())

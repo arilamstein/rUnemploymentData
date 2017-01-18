@@ -71,15 +71,15 @@ build_state_df = function()
 #' Data comes from ?df_state_unemployment. The choropleth is rendered with the function
 #' ?state_choropleth in the choroplethr package.
 #' 
-#'  @param year The year of data to use. Must be between 2000 and 2013.
-#'  @param buckets The number of equally sized buckets to places the values in. 
-#'  A value of 1 will use a continuous scale, and a value in [2, 9] will use that many buckets.
-#'  @param zoom An optional vector of states to zoom in on. Elements of this vector 
-#'  must exactly match the names of states as they appear in the "region" column of 
-#'  ?state.regions in the choroplethrMaps package.
+#' @param year The year of data to use. Must be between 2000 and 2013.
+#' @param num_colors The number of colors on the map. A value of 1 will use a continuous scale. 
+#' A value in [2, 9] will use that many colors.
+#' @param zoom An optional vector of states to zoom in on. Elements of this vector 
+#' must exactly match the names of states as they appear in the "region" column of 
+#' ?state.regions in the choroplethrMaps package.
 #' @importFrom choroplethr state_choropleth
 #' @export
-state_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
+state_unemployment_choropleth = function(year = 2013, num_colors = 7, zoom = NULL)
 {
   # validate input
   stopifnot(is.numeric(year))
@@ -93,7 +93,7 @@ state_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
   # sensible defaults
   title  = paste0("State Unemployment Rates: Year ", year)
   legend = "Unemployment Rate"
-  state_choropleth(df, title, legend, buckets, zoom)
+  state_choropleth(df, title, legend, num_colors, zoom)
 }
 
 #' Create an animated choropleth of US State Unemployment Data
@@ -103,6 +103,7 @@ state_unemployment_choropleth = function(year = 2013, buckets = 7, zoom = NULL)
 #' your local file system - see ?choroplethr_animate in the choroplethr package for details.
 #' @export
 #' @importFrom choroplethr state_choropleth choroplethr_animate
+#' @importFrom utils data
 animated_state_unemployment_choropleth = function()
 {
   data(df_state_unemployment, package="rUnemploymentData", envir=environment())

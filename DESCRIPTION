@@ -4,15 +4,12 @@ Description: Contains data and visualization functions for USA unemployment
     data. Data comes from the US Bureau of Labor Statistics (BLS). State data
     is in ?df_state_unemployment and covers 2000-2013. County data is in
     ?df_county_unemployment and covers 1990-2013. Choropleth maps of the data
-    can be generated with ?state_unemployment_choropleth and
-    ?county_unemployment_choropleth respectively. See the vignettes for
-    additional information.
-Version: 1.0.0
-Author: Ari Lamstein <arilamstein@gmail.com>[cre]
-Maintainer: Ari Lamstein <arilamstein@gmail.com>
-URL: https://github.com/trulia/rUnemploymentData/,
-    https://groups.google.com/forum/#!forum/choroplethr
-BugReports: https://github.com/trulia/choroplethr/issues
+    can be generated with ?state_unemployment_choropleth() and
+    ?county_unemployment_choropleth() respectively. 
+Version: 1.0.1
+Author: Ari Lamstein <ari@lamsteinconsulting.com>[cre]
+Maintainer: Ari Lamstein <ari@lamsteinconsulting.com>
+URL: http://www.arilamstein.com/open-source
 Copyright: Trulia, Inc.
 License: BSD_3_clause + file LICENSE
 Imports:
@@ -21,6 +18,5 @@ Imports:
     rvest
 Suggests:
     choroplethrMaps,
-    knitr,
     testthat
-VignetteBuilder: knitr
+RoxygenNote: 5.0.1
