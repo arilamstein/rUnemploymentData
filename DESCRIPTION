@@ -7,7 +7,7 @@ Description: Contains data and visualization functions for USA unemployment
     can be generated with ?state_unemployment_choropleth() and
     ?county_unemployment_choropleth() respectively. 
 Version: 1.1.0
-Author: Ari Lamstein <ari@lamsteinconsulting.com>[cre]
+Author: Ari Lamstein <ari@lamsteinconsulting.com>
 Maintainer: Ari Lamstein <ari@lamsteinconsulting.com>
 URL: http://www.arilamstein.com/open-source
 Copyright: Trulia, Inc.
