@@ -13,4 +13,3 @@ get_county_unemployment_df(year)
 Data is scraped from the US Bureau of Labor Statistics (BSL) webpage. 
 This function is included to allow you to verify the integrity of ?df_county_unemployment.
 }
-

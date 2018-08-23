@@ -12,4 +12,3 @@ get_state_unemployment_df(year = 2013)
 \description{
 This function is included to allow you to verify the integrity of ?df_state_unemployment.
 }
-

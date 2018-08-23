@@ -11,4 +11,3 @@ Data comes from ?df_state_unemployment. The choropleth is rendered with the func
 ?state_choropleth in the choroplethr package. Note that this command will write files to 
 your local file system - see ?choroplethr_animate in the choroplethr package for details.
 }
-

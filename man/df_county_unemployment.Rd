@@ -26,11 +26,10 @@ boxplot(df_county_unemployment[, c(-1, -2, -3)],
 county_unemployment_choropleth(year=2013)
 }
 }
-\author{
-Ari Lamstein
-}
 \references{
 Created via build_county_df() on January 4, 2015.
 }
+\author{
+Ari Lamstein
+}
 \keyword{data}
-

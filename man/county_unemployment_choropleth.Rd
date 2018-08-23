@@ -20,4 +20,3 @@ must exactly match the names of states as they appear in the "region" column of
 Data comes from ?df_county_unemployment. The choropleth is rendered with the function
 ?county_choropleth in the choroplethr package.
 }
-

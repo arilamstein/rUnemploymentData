@@ -10,4 +10,3 @@ build_county_df()
 This function is included to allow you to verify the integrity of ?df_county_unemployment.
 This will scrape the Bureau of Labor Statistics Website to get the data.
 }
-

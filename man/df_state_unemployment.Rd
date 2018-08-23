@@ -24,11 +24,10 @@ boxplot(df_state_unemployment[, -1],
 state_unemployment_choropleth(year=2013)
 }
 }
-\author{
-Ari Lamstein
-}
 \references{
 Created via build_state_df() on January 4, 2015.
 }
+\author{
+Ari Lamstein
+}
 \keyword{data}
-

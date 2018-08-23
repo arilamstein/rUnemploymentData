@@ -10,4 +10,3 @@ build_state_df()
 This function is included to allow you to verify the integrity of ?df_state_unemployment.
 This will scrape the Bureau of Labor Statistics Website to get the data.
 }
-
