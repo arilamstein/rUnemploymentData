@@ -6,7 +6,7 @@ if (base::getRversion() >= "2.15.1") {
 #' 
 #' This function is included to allow you to verify the integrity of ?df_state_unemployment.
 #' @param year A year (integer) between 2000 and 2013
-#' @importFrom rvest html html_nodes html_text 
+#' @importFrom rvest html_nodes html_text 
 #' @export
 get_state_unemployment_df = function(year=2013)
 {
@@ -20,7 +20,7 @@ get_state_unemployment_df = function(year=2013)
           "http://www.bls.gov/lau/lastrk",
           year_string,
           ".htm")
-  data = rvest::html(url)
+  data = rvest::read_html(url)
   
   # the data is in a table where the states are in ascending order of value
   # the first element is always the average, which we don't care about.
